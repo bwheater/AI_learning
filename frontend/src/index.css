@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply h-full;
+  }
+  
+  #root {
+    @apply h-full;
+  }
+}
+
+@layer components {
+  .calc-button {
+    @apply bg-calc-secondary hover:bg-calc-accent text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 active:scale-95 select-none;
+  }
+  
+  .calc-button-primary {
+    @apply bg-calc-accent hover:bg-blue-600;
+  }
+  
+  .calc-button-secondary {
+    @apply bg-gray-600 hover:bg-gray-700;
+  }
+  
+  .calc-button-danger {
+    @apply bg-calc-error hover:bg-red-600;
+  }
+  
+  .calc-display {
+    @apply bg-black text-white p-4 rounded-lg font-mono text-right;
+  }
+  
+  .mode-tab {
+    @apply px-4 py-2 rounded-t-lg font-medium transition-colors duration-200 cursor-pointer;
+  }
+  
+  .mode-tab-active {
+    @apply bg-calc-accent text-white;
+  }
+  
+  .mode-tab-inactive {
+    @apply bg-gray-300 text-gray-700 hover:bg-gray-400;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Prevent text selection on buttons */
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+  .calc-display {
+    font-size: 1.25rem;
+  }
+  
+  .calc-button {
+    @apply py-2 px-3 text-sm;
+  }
+}
